@@ -2,6 +2,7 @@
 .gradle
 .settings
 .vscode
+*.swp
 
 # Ignore Gradle build output directory
 build
