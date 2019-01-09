@@ -59,7 +59,7 @@ public class LsOperatorTest {
         this.operator = new LsOperator(this.detail, this.ff, this.printer);
         File f = this.ff.getFile("test");
         this.operator.displayDetails(f);
-        assertEquals("---- 0 Thu Jan 01 01:00:00 CET 1970 test\n", String.join("", this.printer.printParam));
+        assertEquals("---- 0 Thu Jan 01 00:00:00 UTC 1970 test\n", String.join("", this.printer.printParam));
     }
 
     @Test
@@ -70,7 +70,7 @@ public class LsOperatorTest {
         f.setWritable(true);
         f.setExecutable(true);
         this.operator.displayDetails(f);
-        assertEquals("-rwx 0 Thu Jan 01 01:00:00 CET 1970 test\n", String.join("", this.printer.printParam));
+        assertEquals("-rwx 0 Thu Jan 01 00:00:00 UTC 1970 test\n", String.join("", this.printer.printParam));
     }
 
     @Test
@@ -78,7 +78,7 @@ public class LsOperatorTest {
         this.operator = new LsOperator(this.detail, this.ff, this.printer);
         File f = this.ff.getDirectory("test", false);
         this.operator.displayDetails(f);
-        assertEquals("d--- 0 Thu Jan 01 01:00:00 CET 1970 test\n", String.join("", this.printer.printParam));
+        assertEquals("d--- 0 Thu Jan 01 00:00:00 UTC 1970 test\n", String.join("", this.printer.printParam));
     }
 
     @Test
