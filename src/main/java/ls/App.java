@@ -6,5 +6,6 @@ public class App {
         LsContext context = parser.parse(args);
         LsOperator operator = new LsOperator(context, new FileFactory(), new Printer());
         operator.run();
+        System.out.print("\n");
     }
 }
