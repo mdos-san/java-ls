@@ -9,8 +9,8 @@ public class LsParser {
     public LsContext parse(String[] args) {
         LsContext context = new LsContext();
         List<String> l = Arrays.asList(args);
-        context.fileNames = l.stream().filter(x -> x.charAt(0) != '-').collect(Collectors.toList());
-        List<String> options = l.stream().filter(x -> x.charAt(0) == '-').collect(Collectors.toList());
+        context.fileNames = l.stream().filter(x -> x.length() > 0 && x.charAt(0) != '-').collect(Collectors.toList());
+        List<String> options = l.stream().filter(x -> x.length() > 0 && x.charAt(0) == '-').collect(Collectors.toList());
 
         for (String option : options) {
             loadOption(context, option);
