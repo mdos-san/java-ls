@@ -40,7 +40,7 @@ public class LsParserTest {
     @Test
     public void ParserTestCase3() {
         LsContext context = this.parser.parse(param3);
-        assertEquals(context.fileNames.get(0), ".");
+        assertEquals(context.fileNames.get(0), System.getProperty("user.dir"));
     }
 
     @Test

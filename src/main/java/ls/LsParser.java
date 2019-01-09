@@ -19,8 +19,9 @@ public class LsParser {
             context.fileNames.sort(Comparator.reverseOrder());
         else
             context.fileNames.sort(Comparator.naturalOrder());
-        if (context.recursive && context.fileNames.size() == 0)
-            context.fileNames.add(".");
+        if (context.recursive && context.fileNames.size() == 0) {
+            context.fileNames.add(System.getProperty("user.dir"));
+				}
         return context;
     }
 
